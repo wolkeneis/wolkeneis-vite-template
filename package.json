@@ -1,0 +1,56 @@
+{
+  "name": "@wolkeneis/<<NAME>>",
+  "version": "0.0.0",
+  "private": true,
+  "description": "<<NAME>>",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wolkeneis/<<NAME>>.git"
+  },
+  "author": "Frooastside <frooastside@gmail.com>",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/wolkeneis/<<NAME>>/issues"
+  },
+  "homepage": "https://<<NAME>>.wolkeneis.dev/",
+  "engines": {
+    "node": "*",
+    "vscode": "^1.22.0",
+    "npm": "^8.x.x",
+    "pnpm": "7.x.x"
+  },
+  "main": "<<MAIN>>",
+  "bin": {},
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint --ext ts .",
+    "lint:fix": "pnpm eslint --fix --ext ts .",
+    "pretty": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^1.3.0",
+    "@typescript-eslint/eslint-plugin": "^5.26.0",
+    "@typescript-eslint/parser": "^5.26.0",
+    "eslint": "^8.16.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^12.4.2",
+    "prettier": "2.6.2",
+    "typescript": "^4.6.3",
+    "vite": "^2.9.9"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": "eslint --ext ts --cache --fix",
+    "*.{js,ts,jsx,tsx,css,md,json}": "prettier --write"
+  }
+}
