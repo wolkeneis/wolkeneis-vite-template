@@ -26,8 +26,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint --ext ts .",
-    "lint:fix": "pnpm eslint --fix --ext ts .",
+    "lint": "eslint --ext js,ts,jsx,tsx .",
+    "lint:fix": "pnpm eslint --fix --ext js,ts,jsx,tsx .",
     "pretty": "prettier --write .",
     "prepare": "husky install"
   },
@@ -50,7 +50,7 @@
     "vite": "^2.9.9"
   },
   "lint-staged": {
-    "*.{js,ts,jsx,tsx}": "eslint --ext ts --cache --fix",
+    "*.{js,ts,jsx,tsx}": "eslint --ext js,ts,jsx,tsx --cache --fix",
     "*.{js,ts,jsx,tsx,css,md,json}": "prettier --write"
   }
 }
