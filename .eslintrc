@@ -4,15 +4,24 @@
     "es2022": true,
     "node": true
   },
-  "extends": ["plugin:@typescript-eslint/eslint-recommended", "plugin:@typescript-eslint/recommended", "prettier"],
+  "extends": ["plugin:@typescript-eslint/eslint-recommended", "plugin:@typescript-eslint/recommended", "plugin:react/recommended", "plugin:react/jsx-runtime", "prettier"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
-    "project": ["tsconfig.json", "electron/tsconfig.json"]
+    "project": ["tsconfig.json"],
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["react", "@typescript-eslint"],
   "rules": {
+    "react/jsx-sort-props": "warn",
+    "react/jsx-filename-extension": [
+      1,
+      { "allow": "as-needed", "extensions": [".jsx", ".tsx"] }
+    ],
+    "require-jsdoc": 0,
     "quotes": ["error", "double"]
   }
 }
