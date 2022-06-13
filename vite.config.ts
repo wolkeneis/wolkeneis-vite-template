@@ -15,7 +15,6 @@ function renderChunks(dependencies: Record<string, string>) {
 }
 
 export default defineConfig({
-  base: process.env.ELECTRON == "true" ? "./" : "",
   server: {
     port: 3000
   },
