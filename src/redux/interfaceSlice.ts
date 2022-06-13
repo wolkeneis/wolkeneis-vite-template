@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction, Slice } from "@reduxjs/toolkit";
 
 interface InterfaceState {
   theme: "dark-theme" | "light-theme";
@@ -8,7 +8,7 @@ const initialState: InterfaceState = {
   theme: "dark-theme"
 };
 
-export const interfaceSlice = createSlice({
+export const interfaceSlice: Slice = createSlice({
   name: "interface",
   initialState,
   reducers: {
