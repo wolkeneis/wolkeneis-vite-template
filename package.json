@@ -22,6 +22,7 @@
   },
   "main": "dist_electron/electron.js",
   "bin": {},
+  "type": "module",
   "build": {
     "asar": true,
     "asarUnpack": true,
@@ -53,33 +54,20 @@
     "electron:dev": "wait-on tcp:3000 && nodemon -e ts -L -w electron --exec \"pnpm electron:build && cross-env IS_DEV=true pnpm electron .\"",
     "electron:build": "tsc -p electron --incremental",
     "electron:bundle": "electron-builder",
-    "lint": "eslint --ext js,ts,jsx,tsx .",
-    "lint:fix": "pnpm eslint --fix --ext js,ts,jsx,tsx .",
+    "lint": "eslint --ext ts,jsx,tsx .",
+    "lint:fix": "eslint --fix --ext ts,jsx,tsx .",
     "pretty": "prettier --write .",
     "prepare": "husky install"
   },
-  "dependencies": {
-    "@emotion/react": "^11.9.3",
-    "@emotion/styled": "^11.9.3",
-    "@fontsource/roboto": "^4.5.7",
-    "@mui/icons-material": "^5.8.3",
-    "@mui/material": "^5.8.3",
-    "@reduxjs/toolkit": "^1.8.2",
-    "electron-is-dev": "^2.0.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-redux": "^8.0.2",
-    "react-router-dom": "^6.3.0"
-  },
   "devDependencies": {
-    "@types/node": "^17.0.42",
+    "@types/node": "^18.0.0",
     "@types/prop-types": "^15.7.5",
-    "@types/react": "^18.0.12",
+    "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
     "@types/react-redux": "^7.1.24",
     "@types/react-router-dom": "^5.3.3",
-    "@typescript-eslint/eslint-plugin": "^5.27.1",
-    "@typescript-eslint/parser": "^5.27.1",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
     "@vitejs/plugin-react": "^1.3.2",
     "concurrently": "^7.2.1",
     "cross-env": "^7.0.3",
@@ -97,8 +85,21 @@
     "vite": "^2.9.12",
     "wait-on": "^6.0.1"
   },
+  "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@fontsource/roboto": "^4.5.7",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.8.4",
+    "@reduxjs/toolkit": "^1.8.2",
+    "electron-is-dev": "^2.0.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0"
+  },
   "lint-staged": {
-    "*.{js,ts,jsx,tsx}": "eslint --ext js,ts,jsx,tsx --cache --fix",
+    "*.{js,ts,jsx,tsx}": "eslint --ext ts,jsx,tsx --cache --fix",
     "*.{js,ts,jsx,tsx,css,md,json}": "prettier --write"
   }
 }
